@@ -31,7 +31,6 @@ def _generatemessage(events):
     return strevent
 
 @bot.command()
-@commands.has_permissions(administrator=True)
 async def add(ctx, date, title):
     if not _check_roles(ctx):
         await ctx.send('Saecio; solo los administradores y los usuarios con rol "Pomponera" pueden usar este comando')
@@ -42,7 +41,6 @@ async def add(ctx, date, title):
     await ctx.send('Añadiendo evento con fecha {0} y titulo "{1}"'.format(date, title))
 
 @bot.command(name="autoreminder")
-@commands.has_permissions(administrator=True)
 async def set_reminder(ctx):
     if not _check_roles(ctx):
        await ctx.send('Saecio; solo los administradores y los usuarios con rol "Pomponera" pueden usar este comando')
